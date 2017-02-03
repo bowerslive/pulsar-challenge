@@ -1,0 +1,383 @@
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* End of CSS Reset */
+
+@import "mixins.less";
+@import "variables.less";
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
+hr.line{ display: block;
+    height: 1px;
+    border: 0;
+    width:100%;
+    text-align: center;
+    border-top: 1px solid @light-grey;
+    border-bottom: 1px solid @light-grey;
+    margin: 20px 0px 20px;
+}
+
+.right-border{
+  border-right: 1px solid @light-grey;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Payment Form  - Left Column */
+
+form{
+  padding:5%;
+  legend{
+    color: @black;
+    font-size:2rem;
+    margin:0 0 20px 0;
+    #regular;
+  }
+  label{
+    text-transform:uppercase;
+    font-size:0.75rem;
+    width:20%;
+    display:inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    #regular;
+    &.short-label{
+      width: 15%;
+      text-align: right;
+      margin:0 20px 0 0px;
+    }
+
+  }
+  div{
+    margin: 0 0 20px 0;
+  }
+  input{
+      border: 1px solid @medium-grey;
+      height:36px;
+      line-height: 36px;
+      padding:0 5px;
+      width:78%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      &.cvv {
+        width:10%;
+      };
+      &.date {
+        width:25%;
+      }
+  }
+  .payment-buttons{
+  margin: 4% 0 0 20.5%;
+  }
+
+  .currency-symbol{
+    height:36px; 
+    width:36px; 
+    display:inline-block;
+    text-align: center;
+    line-height: 36px;
+    border-left: 1px solid @medium-grey;
+    border-top: 1px solid @medium-grey;
+    border-bottom: 1px solid @medium-grey;
+    background-color: @light-grey;
+  }
+
+  .pay-total{
+    height:36px;
+    width:150px;
+    display:inline-block;
+    padding: 0 10px;
+    line-height: 36px;
+    border:1px solid @medium-grey;
+  }
+}
+
+
+/* Address Details - Right Column */
+
+.address-details{
+  margin: 85px 0 0 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  .address-heading{
+    font-size: 1.25rem;
+    display:block;
+    margin: 0 0 20px 0;
+  }
+  .address{
+    clear:both;
+  }
+  .edit{
+    top:3px;
+    right: 0px;
+    position: absolute;
+    text-transform: uppercase;
+  }
+  .shipping-address,.billing-address{
+    position:relative;
+  }
+}
+
+/* Tooltips */
+
+.tooltipicon{
+  margin-left: 5px;
+  vertical-align:middle;
+  &:hover .tooltip{
+     display:block;
+  }
+}
+
+.tooltip {
+    display: none;
+    color: @black;
+    background-color: @light-grey;
+    border: 1px solid @medium-grey;
+    width: 200px;
+    height:auto;
+    padding: 20px;
+    margin-left: 50px;
+    margin-top: 5px; 
+    position: absolute;
+    z-index: 1000;
+    .border-radius (@radius: 2px);
+    text-transform: none;
+    line-height: 1rem;
+    .drop-shadow;
+      .card-image{
+        padding: 10px 0 0 0;
+      }
+}
+
+/* Date Picker - Overide Styles */
+
+.ui-datepicker-calendar, .ui-datepicker-current, .ui-datepicker-next, .ui-datepicker-prev  {
+    display: none;
+}
+
+.ui-widget-header{
+  background: none;
+  border:none;
+  }
+
+.ui-datepicker{
+  padding:0;
+  margin:10px;
+   .drop-shadow;
+   .ui-datepicker-title{
+    margin:0;
+    font-size: 0.75rem;
+    line-height: 1.0rem;
+    margin: 10px;
+    display: block;
+    #font;
+    &::before{
+      content: "Please select the month and year and click 'Done'.";
+      display:block;
+      margin:10px;
+    };
+  }
+  .ui-datepicker-buttonpane{
+    padding:0;
+    margin:0;
+    button{
+      float: left;
+      margin: 0 0 15px 22px;
+      padding: 0px;
+      width: 160px;
+    }
+  }
+  .ui-datepicker-current{
+    display:none!important;
+  }
+  select.ui-datepicker-month,.ui-datepicker-year{
+    width:40%;
+    height:36px;
+    clear:both; 
+    &.ui-datepicker-month{
+      margin-right:10px;
+    }
+  }
+}
+
+#ui-datepicker-div{
+  background: @light-grey;
+  border: 1px solid @medium-grey;
+  font-size: 0.75rem;
+  line-height: 1.0rem;
+  .ui-widget-content{
+    border:none;
+    .ui-state-default{
+      .btn-pay;
+    }
+    .ui-datepicker-close{
+      .btn-pay;
+      #font;
+      #regular;
+      color:@white;
+      background-image: none;
+      border:none;
+    }
+  }
+}
+
+
+/* Media Queries */
+
+/* Tablet up to Desktop */
+
+@media only screen and (min-width: 767px) and (max-width: 960px){
+  form{
+    label{
+       width:100%;
+       padding:10px 0;
+       &.short-label{
+        width:100%;
+        text-align: left;
+        margin:0px;
+      }
+    }
+    input{
+        &.date{
+          width:30%;
+        }
+        &.cvv {
+        width:20%;
+        };
+    }
+    div{
+      margin:0;
+    }
+    .payment-buttons{
+      margin:15px 0 30px 0;
+    }
+  }
+  .address-details{
+    .edit{
+      position: relative;
+      display:block;
+      padding: 0 0 10px 0;
+    }
+  }
+
+}
+
+/* Tablet Specific */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+
+  form{
+     padding: 1%;
+      label{
+        width: 25%;
+      }
+      
+  }
+
+  .right-border{
+    border: none;
+  }
+
+}
+
+/* Mobile & Tablet Global */
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  form{
+    padding: 1%;
+    label{
+      width:100%;
+      padding:10px 0;
+      &.short-label{
+        width:100%;
+        text-align: left;
+        margin:0px;
+      }
+    }
+    input{
+      width:100%;
+      &.cvv {
+        width:20%;
+      };
+      &.date {
+        width:40%;
+      }
+    }
+    div{
+      margin:0;
+    }
+    .payment-buttons{
+      margin:15px 0 30px 0;
+    }
+  }
+  .address-details{
+    padding: 1%;
+    .edit{
+      right:2%;
+    }
+  }
+
+  .right-border{
+    border:none;
+  }
+
+}

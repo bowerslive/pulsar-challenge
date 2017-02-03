@@ -1,0 +1,115 @@
+@import "variables.less";
+
+/* Font Family */
+#font{
+	font-family: 'Lato', sans-serif;
+}
+
+/* Font Sizes */
+body{ font-family: 'Lato', sans-serif;}
+
+html {
+  font-size: 16px;
+}
+
+a{
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	&:hover{
+		text-decoration: underline;	
+	};
+}
+
+p{#font}
+
+p{
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin: 1em 0px;
+}
+
+/* Font Weights */
+
+#light, #regular, #bold{
+	#font;
+}
+
+#light{
+	font-weight: 300;
+}
+
+#regular{
+	font-weight: 400;
+}
+
+#bold{
+	font-weight: 700;
+}
+
+
+/*Buttons*/
+
+.btn-pay{
+ .border-radius (@radius: 2px);
+  padding: 15px 10px;
+  font-size: 0.875rem;
+  background-color: @blue;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  color:@white;
+  box-sizing: border-box;
+  transition: all 0.2s ease 0s;
+  &:hover {
+		background-color: @dark-blue;
+		text-decoration: none;
+		color: @white;
+		}
+}
+
+.btn-cancel{
+	.border-radius (@radius: 2px);
+	padding: 15px 10px;
+ 	font-size: 0.875rem;
+	background-color: @white;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	color:@black;
+	box-sizing: border-box;
+	transition: all 0.2s ease 0s;
+	&:hover {
+		background-color: @white;
+		text-decoration: underline;
+		color: @dark-blue;
+		}
+}
+
+
+/* Round Corners */
+
+.border-radius (@radius: 2px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+/* Drop Shadow */
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 1px, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+/* Transitions */
+
+#transition (@prop: all, @time: 1s, @ease: linear) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}

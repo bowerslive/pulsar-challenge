@@ -1,0 +1,87 @@
+/* Primary Colour Palette */
+/* Secondary Colour Palette */
+/* Font Family */
+#font {
+  font-family: 'Lato', sans-serif;
+}
+/* Font Sizes */
+body {
+  font-family: 'Lato', sans-serif;
+}
+html {
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+a:hover {
+  text-decoration: underline;
+}
+p {
+  font-family: 'Lato', sans-serif;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  margin: 1em 0px;
+}
+/* Font Weights */
+#light,
+#regular,
+#bold {
+  font-family: 'Lato', sans-serif;
+}
+#light {
+  font-weight: 300;
+}
+#regular {
+  font-weight: 400;
+}
+#bold {
+  font-weight: 700;
+}
+/*Buttons*/
+.btn-pay {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 15px 10px;
+  font-size: 0.875rem;
+  background-color: #185aab;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  color: #ffffff;
+  box-sizing: border-box;
+  transition: all 0.2s ease 0s;
+}
+.btn-pay:hover {
+  background-color: #3a485a;
+  text-decoration: none;
+  color: #ffffff;
+}
+.btn-cancel {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 15px 10px;
+  font-size: 0.875rem;
+  background-color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  color: #252525;
+  box-sizing: border-box;
+  transition: all 0.2s ease 0s;
+}
+.btn-cancel:hover {
+  background-color: #ffffff;
+  text-decoration: underline;
+  color: #3a485a;
+}
+/* Round Corners */
+/* Drop Shadow */
+/* Transitions */

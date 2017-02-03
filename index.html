@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Jadu | Buy Something awesome</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="./styles/css/normalise.css">
+	<link rel="stylesheet" href="./styles/css/skeleton1200.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="./styles/css/main.css">
+	
+
+	
+	<!-- Fonts
+	================================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Script 
+	================================================== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="./script/modernizr-custom.js"></script>
+
+	<script>
+			$(function() {
+			    $('#startDate, #endDate').datepicker({
+			        dateFormat: "mm/yy"
+			    }) 
+			    .datepicker('setDate', new Date())
+			    .datepicker("option", "changeMonth", true)
+			    .datepicker("option", "changeYear", true)
+			    .datepicker("option", "showButtonPanel", true)
+			    .datepicker("option", "onClose", function(e){
+			         var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+			         var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+			         $(this).datepicker("setDate",new Date(year,month,1));
+			})
+			});
+		</script>
+	
+</head>
+<body>
+
+		<div class="container">
+
+			<div class="sixteen columns">
+					
+				<!-- Payment Form -->		
+				<div class="ten columns offset-by-two alpha right-border">
+
+					<form>
+						<fieldset>
+							<legend>Buy something awesome</legend>
+						</fieldset>
+
+						<div>
+							<label>Name on card</label>
+							<input name="name-on-card" type="text" />
+						</div>
+						<div>
+							<label>Card Number</label>
+							<input name="card-number" type="password" />
+						</div>
+						<div>
+							<label>Valid From</label>
+							
+							<input name="startDate" id="startDate" class="date-picker date" placeholder="MM/YYYY" />
+
+							<!--<input type="select" class ="date" id="startdate" size="20"/> -->
+							<label class="short-label">Expires</label>
+							<input name="endDate" id="endDate" class="date-picker date" placeholder="MM/YYYY" />
+						</div>
+						<div>
+							<label for="CVV">CVV <span class="tooltipicon"><img src="images/tooltip-icon.png" width="12" height="12"/><span class="tooltip">Your CVV is the 3-digit number found on the back of your card.<img src="images/card.png" width="200" height="120" class="card-image"/></span></span></label>
+							
+							<input type="text" class="cvv"/>	
+						</div>
+
+						
+
+
+
+						<hr class="line" />
+
+						<div>
+							<label>Amount to pay</label>
+							<span class="currency-symbol">£</span><span class="pay-total">123.45</span>
+						</div>
+						<div class="payment-buttons">
+							<a href="#" class="btn-pay" title="Pay Now">Pay Now</a>
+							<a href="#" class="btn-cancel" title="Cancel">Cancel</a>
+						</div>
+					</form>
+
+				</div>
+
+				<!-- Shipping/Billing Details -->
+				<div class="four columns omega address-details">
+					<div class="shipping-address">
+						<span class="address-heading">Ship to:</span> 
+
+						<span class="edit">
+							<a href="#">Change</a>
+						</span>
+
+						<span class="address">
+							Team Pulsar<br>
+							Round Foundry Media Center<br>
+							David Street<br>
+							Holbeck<br>
+							Leeds<br>
+							LS2 5QP
+						</span>
+					</div>
+
+					<hr class="line" />
+
+					<div class="billing-address">
+						<span class="address-heading">Billing Address:</span>
+						<span class="edit">
+							<a href="#">Change</a>
+						</span>
+
+						<span class="address">
+							Same as shipping address
+						</span>
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+    </body>
+</html>
